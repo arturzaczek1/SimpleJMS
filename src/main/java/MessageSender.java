@@ -6,15 +6,17 @@ public class MessageSender {
 
     //URL of the JMS server.
     //DEFAULT_BROKER_URL( tcp://localhost:61616") will just mean that JMS server is on localhost
-    private static final String URL = "failover://tcp://localhost:61622";
+    private static final String URL = "failover://tcp://localhost:61628";
 
     // default broker URL is : tcp://localhost:61616"
     private static final String SUBJECT = "MY_QUEUE";
 
     public void sendMessage(String messageContent) throws Exception{
         //        creating connection
+        Connection connection = null;
         ConnectionFactory connectionFactory = new ActiveMQConnectionFactory(URL);
-        Connection connection = connectionFactory.createConnection();
+
+        connection = connectionFactory.createConnection();
 
         connection.start();
 

@@ -4,7 +4,7 @@ import javax.jms.*;
 
 public class MessageConsumer {
 
-    private static final String URL = "failover://tcp://localhost:61622";
+    private static final String URL = "failover://tcp://localhost:61628";
 
     private static final String SUBJECT = "MY_QUEUE";
 
